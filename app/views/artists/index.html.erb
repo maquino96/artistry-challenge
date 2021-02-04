@@ -1,0 +1,14 @@
+<h1> Artists </h1>
+
+<ol>
+    <% @artists.each do |artist_instance| %>
+
+        <li>
+            <p> <%= artist_instance.name %> </p>
+            <%= link_to artist_instance.name, artist_path(artist_instance) %>
+        </li>
+
+    <% end %>
+</ol>
+
+<p> <%= link_to "Connect Artist to Instrument", new_artists_instrument_path %></p>
