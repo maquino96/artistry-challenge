@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :artists_instruments
 
 
-  get '/artists_instrument/new', to: 'artist_instrument_instruments#new', as: 'new_artists_instrument'
+  get '/artists_instrument/new', to: 'artist_instruments#new', as: 'new_artists_instrument'
   
 
   get '/artists', to: 'artists#index', as: 'artists'
