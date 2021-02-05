@@ -4,11 +4,13 @@
     <% @artists.each do |artist_instance| %>
 
         <li>
-            <p> <%= artist_instance.name %> </p>
-            <%= link_to artist_instance.name, artist_path(artist_instance) %>
+            <p> <%= artist_instance.name %> - <%= artist_instance.title %> - <%= link_to "Link", artist_path(artist_instance) %>  </p>
         </li>
 
     <% end %>
 </ol>
 
-<p> <%= link_to "Connect Artist to Instrument", new_artists_instrument_path %></p>
+<p> <%= button_to "Create New Artist", new_artists_path, method: 'get' %> </p>
+
+<p> <%= button_to "Connect Artist to Instrument", new_artists_instruments_path , method: 'get' %></p>
+

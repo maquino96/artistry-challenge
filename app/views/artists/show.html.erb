@@ -2,3 +2,21 @@
 
 <p><%= @artist.title %> - <%= @artist.age %>  </p>
 
+
+<h2> Artist - Instrument Connections</h2>
+
+<ul> 
+
+    <% @artist.artist_instruments.each do |artists_instrument_inst| %>
+
+        <li>
+            <%= artists_instrument_inst.artist.name %> - <%= artists_instrument_inst.instrument.name %> 
+        </li>
+    
+    <% end %>
+
+</ul>
+
+<p> <%= button_to "Edit Artist Info", edit_artist_path , method: 'get' %></p>
+
+<p> <%= link_to "See All Artists", artists_path %> </p>

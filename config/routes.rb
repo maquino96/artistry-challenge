@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   
   # resources :artists_instruments
 
-
-  get '/artists_instrument/new', to: 'artist_instruments#new', as: 'new_artists_instrument'
+  get '/artists_instruments', to: 'artist_instruments#index', as: 'artist_instruments'
+  get '/artists_instrument/new', to: 'artist_instruments#new', as: 'new_artists_instruments'
+  post '/artists_instruments', to: 'artist_instruments#create'
+  
   
 
   get '/artists', to: 'artists#index', as: 'artists'

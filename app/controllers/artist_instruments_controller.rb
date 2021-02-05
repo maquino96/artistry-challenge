@@ -10,11 +10,14 @@ class ArtistInstrumentsController < ApplicationController
 
     def new
         @artistInstrument = ArtistInstrument.new 
+        @artist = Artist.all 
+        @instrument = Instrument.all 
     end 
 
     def create
         @artistInstrument = ArtistInstrument.create(artistInstrument_params)
-        redirect_to artistInstrument_path(@artistInstrument)
+        # byebug
+        redirect_to artist_path(@artistInstrument.artist_id)
     end 
 
     def edit
@@ -36,7 +39,7 @@ class ArtistInstrumentsController < ApplicationController
     private
 
     def artistInstrument_params
-        params.require(:artistInstrument).permit(:name, :age, :title)
+        params.require(:artist_instrument).permit(:artist_id, :instrument_id)
     end  
 
 end

@@ -1,0 +1,12 @@
+<h1>Log a New Connection</h1>
+
+<%= form_for @artistInstrument do |f| %>
+    <%= f.label :artist_id %>
+    <%= f.collection_select :artist_id, @artist, :id, :name %>
+    <%= f.label :instrument_id %>
+    <%= f.collection_select :instrument_id, @instrument, :id, :name %>
+    <%= f.submit %>
+<% end %>
+
+
+<p> <%= link_to "See All Artists", artists_path %> </p>
